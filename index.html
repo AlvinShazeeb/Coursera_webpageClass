@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Shazeeb Website</title>
+</head>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+    <clipPath id="brush-stroke-clip">
+        <path d="M10,10 Q50,0 90,10 T170,10 Q200,50 210,90 T180,170" />
+    </clipPath>
+</svg>
+<body>
+    <header>
+        <a href="#" class="logo">Shazeeb</a>
+
+        <nav>
+            <a href="#About_me" >About</a>
+            <a href="#Skills" >Skills</a>
+            <a href="#Projects" >Projects</a>
+            <a href="#Recomandations" >Recomandations</a>
+        </nav>
+    </header>
+    <section class="home" id="About_me">
+        <div class="home-img">
+            <img src="main1.jpg" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Shazeeb</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>I'm a passionate game devoloper ,who also Designs Graphics, Animates, Writes Fiction and Makes webpages</p>
+            <p>I'm always looking for oppurtunities to learn and grow. If you're interested in working together feel free to contact me!</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <section class="skills" id="Skills">
+        <h2>My Skills Include</h2>
+        <br><br><br><br>
+        <div class="skills-container">
+          <div class="skill">
+            <i class="fas fa-gamepad"></i>
+            <h3>Game Development</h3>
+          </div>
+          <div class="skill">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Graphics Design</h3>
+          </div>
+          <div class="skill">
+            <i class="fas fa-film"></i>
+            <h3>Animation</h3>
+          </div>
+          <div class="skill">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Web Design</h3>
+          </div>
+          <div class="skill">
+            <i class="fas fa-code"></i>
+            <h3>Web Development</h3>
+          </div>
+          <div class="skill">
+            <i class="fa-solid fa-fire-flame-simple"></i>
+            <h3>Godot</h3>
+          </div>
+          <div class="skill">
+            <i class="fa-brands fa-python"></i> 
+            <h3>Python</h3>
+          </div>
+          <div class="skill">
+            <i class="fab fa-java"></i>
+            <h3>Java</h3>
+          </div>
+          <div class="skill">
+            <i class="fas fa-music"></i>
+            <h3>Music Production</h3>
+          </div>
+        </div>
+      </section>
+      <section class="projects" id="Projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+          <div class="project">
+            <i class="fas fa-gamepad"></i>
+            <h3>Harvester</h3>
+            <p>A simple platformer game about collecting berries. Its my first finished game.</p>
+          </div>
+          <div class="project">
+            <i class="fas fa-microphone-alt"></i>
+            <h3>Songbird</h3>
+            <p>This was both a game UI centered project and a project to learn to analyze and manupulate voval input.</p>
+          </div>
+          <div class="project">
+            <i class="fas fa-bomb"></i>
+            <h3>BooM!</h3>
+            <p>This one is my first multiplayer game, It still has a lot of bugs but the gameplay is fun!</p>
+          </div>
+          <div class="project">
+            <i class="fas fa-camera-retro"></i>
+            <h3>Shot by Yasir</h3>
+            <p>A webpage I made for my friends photography portfolio</p>
+          </div>
+        </div>
+      </section>
+      <section class="reviews" id="Recomandations">
+        <h2>What People Are Saying</h2>
+        <div class="reviews-container">
+          <div class="review">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <h3>Mr. Thomas, Class Teacher</h3>
+            <p>"Shazeeb is one of the most ambitious students I've ever worked with. His dedication to learning and constant drive to take on challenging projects sets him apart from his peers. I’m excited to see where his passion takes him!"</p>
+          </div>
+          <div class="review">
+            <i class="fas fa-users"></i>
+            <h3>Heartsplash Art Club</h3>
+            <p>"Shazeeb is an incredible team player. He’s always the first to lend a hand, ensuring everyone is included. His collaborative spirit has made him an invaluable member of the Heartsplash Art Club." </p>
+          </div>
+          <div class="review">
+            <i class="fas fa-users-cog"></i>
+            <h3>Sarah, Project Partner</h3>
+            <p>"Working with Shazeeb was a game-changer. His ability to problem-solve and think outside the box helped us find creative solutions when we hit roadblocks. He’s incredibly resourceful and a true asset to any project."</p>
+          </div>
+        </div>
+      </section>
+      <!-- /*submit*/ -->
+      <section class="review-submit">
+        <h2>Submit Your Review</h2>
+        <form id="review-form" action="#">
+          <input type="text" id="name" placeholder="Your Name" required>
+          <textarea id="review" placeholder="Your Review" required></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+        <div id="popup" class="popup">Review Submitted!</div>
+        <div class="reviews-container" id="review-list">
+        </div>
+      </section>
+      <script>
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Get form data
+  const name = document.getElementById('name').value;
+  const reviewText = document.getElementById('review').value;
+
+  // Create a new review element
+  const review = document.createElement('div');
+  review.classList.add('review');
+  review.innerHTML = `
+    <h3>${name}</h3>
+    <p>${reviewText}</p>
+  `;
+  alert("DON")
+  // Add the new review to the list
+  document.getElementById('review-list').appendChild(review);
+
+  // Show the popup
+  const popup = document.getElementById('popup');
+  popup.style.display = 'block';
+
+  // Hide the popup after 3 seconds
+  setTimeout(() => {
+    popup.style.display = 'none';
+  }, 3000);
+
+  // Reset the form
+  document.getElementById('review-form').reset();
+});
+
+      </script>
+      
+      
+      
+      
+</body>
+</html>
